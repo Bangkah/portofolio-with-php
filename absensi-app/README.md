@@ -1,76 +1,88 @@
 # **Absensi App - by Muhammad Dhiyaul Atha**
 
-Aplikasi Absensi berbasis Laravel 10 dengan fitur absensi masuk dan pulang menggunakan **QRCode** atau **Input Manual**, serta manajemen user dan kehadiran yang lengkap.
+Aplikasi Absensi berbasis **Laravel 10** dengan fitur **absensi masuk dan pulang** menggunakan **QRCode** atau **input manual**, serta sistem manajemen pengguna dan kehadiran yang lengkap.
 
 ---
 
 ## ✨ Fitur Utama
 
-- ✅ Manajemen Jabatan/Posisi (CRUD)
-- ✅ Manajemen User: Admin, Operator, Pegawai
-- ✅ Manajemen Hari Libur
-- ✅ Multi Absensi: Masuk dan Pulang (QR Code / Manual)
-- ✅ Lihat Riwayat Absensi (30 Hari Terakhir)
-- ✅ Permintaan & Persetujuan Izin
+- ✅ CRUD Jabatan / Posisi
+- ✅ Manajemen Pengguna (Admin, Operator, Pegawai)
+- ✅ CRUD Hari Libur
+- ✅ Sistem Absensi Masuk & Pulang (QR Code / Manual)
+- ✅ Riwayat Absensi 30 Hari Terakhir
+- ✅ Permintaan dan Persetujuan Izin
 - ✅ Laporan Karyawan Tidak Hadir
-- ✅ Export Laporan ke Excel & CSV
-- ✅ Role Based Access (RBAC)
-- ✅ Livewire PowerGrid untuk DataTable
+- ✅ Export Laporan ke **Excel** & **CSV**
+- ✅ Role Based Access Control (RBAC)
+- ✅ Tabel interaktif dengan **Livewire PowerGrid**
 
 ---
 
-## 🛠 Cara Install (Linux, Windows, Mac)
+## 🛠 Cara Instalasi di Localhost (Linux / Windows / Mac)
 
-Pastikan sudah terinstall:
+### ✅ Persyaratan
 
 - PHP >= 8.1
 - Composer
 - Git
 - MySQL / MariaDB
 
-### Langkah Install:
+### 📥 Langkah Instalasi
 
 ```bash
 # Clone repository
 git clone https://github.com/Bangkah/ABSENSI-KARYAWAN.git
 cd ABSENSI-KARYAWAN
 
-# Install dependency
+# Install semua dependency
 composer install
 
-# Copy konfigurasi environment
+# Copy file environment
 cp .env.example .env
 
-# Ubah isi .env sesuai konfigurasi database kamu
+# Ubah konfigurasi database di file .env:
 # DB_DATABASE=absensi_karyawan
 # DB_USERNAME=root
 # DB_PASSWORD=
 
-# Generate app key
+# Generate APP_KEY
 php artisan key:generate
 
-# Migrasi & seed database
+# Migrasi dan seeding database
 php artisan migrate --seed
 
 # Jalankan server lokal
 php artisan serve
+```
 
-##kses:
+Setelah server berjalan, buka browser dan akses:
 
-Buka di browser: http://localhost:8000
+```
+http://localhost:8000
+```
 
-📁 Struktur Folder
+---
 
-    app/Http/Controllers/ — Logika kontrol
+## 📁 Struktur Folder Penting
 
-    resources/views/ — Tampilan Blade Laravel
+| Path                                | Deskripsi                              |
+|-------------------------------------|----------------------------------------|
+| `app/Http/Controllers/`             | Logika Controller Laravel              |
+| `resources/views/`                  | Tampilan Blade (Frontend)              |
+| `routes/web.php`                    | Routing Aplikasi                       |
+| `public/js/home/qrcode.js`          | QR Code Scanner JavaScript             |
+| `database/seeders/`                 | Seeder Data Awal (Akun & Jabatan)      |
 
-    routes/web.php — Routing aplikasi
+---
 
-    public/js/home/qrcode.js — QR Code Scanner
+## 👨‍💻 Developer
 
-    database/seeders/ — Data akun dan jabatan awal
+**Muhammad Dhiyaul Atha**  
+GitHub: [https://github.com/Bangkah](https://github.com/Bangkah)
 
-👨‍💻 Developer
-Muhammad Dhiyaul Atha
-GitHub: https://github.com/Bangkah
+---
+
+## 🔒 Lisensi
+
+Proyek ini dikembangkan untuk pembelajaran dan pengembangan pribadi. Silakan fork dan modifikasi sesuai kebutuhan.
